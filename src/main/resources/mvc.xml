@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+	
+ 	<!-- 开启组件自动扫描功能 -->
+   	<context:component-scan base-package="dao"></context:component-scan>
+   	<context:component-scan base-package="entity"></context:component-scan>
+   	<context:component-scan base-package="action"></context:component-scan>
+   	<context:component-scan base-package="service"></context:component-scan>
+   	<context:component-scan base-package="interceptor"></context:component-scan>
+   	
+   	<bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
+   		<property name="dataSource" ref="ds"></property>
+   	</bean>
+   
+   	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+   		<property name="username" value="root"></property>
+   		<property name="password" value="root"></property>
+   		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+   		<property name="url" value="jdbc:mysql://localhost:3306/mydb3?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"></property>
+   	</bean>
+	
+	<!-- viewResolver的配置 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<!-- 拦截器的配置 -->
+	<mvc:interceptors>
+		<!-- 可以配置多个拦截器 -->
+		<mvc:interceptor>
+			<!-- 匹配需要被拦截的请求路径：/**代表拦截所有的请求 -->
+			<mvc:mapping path="/**"/>
+			<!-- exclude-mapping:表示不被拦截的请求路径，可以配置多个-->
+			<mvc:exclude-mapping path="/user/toLogin.do"/>
+			<mvc:exclude-mapping path="/user/login.do"/>
+			<bean class="interceptor.QuanXian"></bean>
+		</mvc:interceptor>
+		
+	</mvc:interceptors>
+</beans>

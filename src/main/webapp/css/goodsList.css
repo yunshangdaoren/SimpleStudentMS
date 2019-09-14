@@ -1,0 +1,216 @@
+body {
+	font-family: "微软雅黑";
+	font-size: 16px;
+	box-sizing: border-box;
+}
+.Cover_div{
+	display: none;
+	width: 100%;
+	z-index: 10;
+	background: rgba(0,0,0,0.4);
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.change_public_div{
+	width: 650px;
+	height: 440px;
+	padding: 20px;
+	background: white;
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -325px;
+	margin-top: -220px;
+}
+.change_public_div input{
+	width: 500px;	
+	padding: 8px 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.change_goodsDetail{
+	width: 500px;
+	height: 150px;
+	margin-bottom: 10px;
+	vertical-align: top;
+}
+.change_btn_div{
+	width: 100%;
+	text-align: center;
+}
+.change_btn1{
+	display: inline-block;
+	width: 100px;
+	line-height: 36px;
+	background: #3C8DBD;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.main {
+	width: 100%;
+	display: flex;
+}
+
+.left-head {
+	width: 20%;
+	/*border: 1px solid red;*/
+	max-width: 300px;
+	min-width: 200px;
+	height: 662px;
+	background: #212B31;
+}
+.left-head li.dgray{
+	/*background-color: #1E282C;*/
+	background-color: #1A2226;
+}
+.left-head li {
+	height: 60px;
+	color: white;
+	padding-left: 40px;
+	line-height: 60px;
+	cursor: pointer;
+}
+
+.right-cont {
+	width: 80%;
+	max-width: 1060px;
+	min-width: 800px;
+	background: #EBEFF5;
+	padding: 30px;
+}
+
+.rightH_p {
+	font-size: 24px;
+	color: darkblue;
+	line-height: 40px;
+	margin-left: 20px;
+}
+.rightBody{
+	border-top: 4px solid deepskyblue;
+	background-color: white;
+}
+.public_div{
+	width: 1000px;
+	padding: 20px;
+}
+.goodsName,.goodsPrice,.goodsNumber{
+	width: 970px;	
+	padding: 8px;
+	margin-bottom: 20px;
+}
+.goodsDetail{
+	width: 990px;
+	height: 35px;	
+	padding: 8px;
+	margin-bottom: 10px;
+}
+.btn_div{
+	width: 100%;
+	text-align: center;
+	
+}
+.btn1{
+	display: inline-block;
+	width: 100px;
+	line-height: 36px;
+	background: #3C8DBD;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.goodsList_div {
+	/*display: none;*/
+	min-height: 352px;
+	position: relative;
+}
+
+table{
+	width: 1000px;
+	border: 0;
+}
+
+tr.table-head {
+	height: 60px;
+	border-bottom: 1px solid deepskyblue;
+}
+tr.table-list{
+	margin: 10px 0;
+}
+th,
+td {
+	border: 0;
+	text-align: center;
+}
+
+.edition {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.eiditB,
+.deleteB {
+	border-radius: 4px;
+	color: white;
+	font-size: 12px;
+	padding: 3px 8px;
+	margin: 0 2px;
+	cursor: pointer;
+}
+
+.eiditB {
+	background: #3C8DBD;
+}
+.deleteB {
+	background: #DE4A38;
+}
+.eiditB:hover,.deleteB:hover{
+	color: red;
+}
+.tablePageIndex{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	position: absolute;
+	bottom: -62px;
+}
+.page_div{
+	margin:20px 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid lightslategrey;
+	border-radius: 4px;
+}
+.goBefore,.goAfter{
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	font-size: 22px;
+	cursor: pointer;
+}
+.goBefore{
+	border-right: 1px solid lightslategrey;
+}
+.page_ul{
+	display: flex;
+	
+}
+.page{
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	font-size: 16px;
+	border-right: 1px solid lightslategrey;
+	cursor: pointer;
+}
+.page.active{
+	background: lightslategray;
+	color: white;
+}
